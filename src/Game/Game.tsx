@@ -60,9 +60,9 @@ export class Game extends React.Component <any, IGameState> {
         const stackKey = Object.keys(this.state.flippedCards);
 
         console.log(stackKey);
+        let stateCopy = Object.assign({}, this.state);
 
         if (index in stackKey) {
-            let stateCopy = Object.assign({}, this.state);
             stateCopy.stack[index].isCardFlipped = true;
 
             console.log(stateCopy);
