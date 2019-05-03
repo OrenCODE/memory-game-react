@@ -16,7 +16,10 @@ export interface IGameState {
 export class Game extends React.Component <any, IGameState> {
 
     state: IGameState = {
-        flippedCards: {},
+        flippedCards: {
+            0: true,
+            2: true,
+        },
         stack: [
             {
                 index: 0,
