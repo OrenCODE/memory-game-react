@@ -4,17 +4,17 @@ import CardPhoto from "../card-back.png"
 export interface ICardProps {
     index: number,
     image: string,
-    isCardFlipped: boolean,
+    isFlipped: boolean,
     onFlip: (index: number) => void
 }
 
 export class Card extends React.Component <ICardProps> {
 
     render() {
-        const {onFlip, index, isCardFlipped, image} = this.props;
+        const {onFlip, index, isFlipped, image} = this.props;
         return (
             <div key={index}>
-                {isCardFlipped ? <img onClick={() => onFlip(index)} className={"myCard"} src={image} alt="Logo"/> :
+                {isFlipped ? <img onClick={() => onFlip(index)} className={"myCard"} src={image} alt="Logo"/> :
                     <img onClick={() => onFlip(index)} className={"myCard"} src={CardPhoto} alt="Logo"/>
                 }
             </div>
